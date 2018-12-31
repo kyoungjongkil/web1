@@ -1,0 +1,42 @@
+body{
+  margin:0;
+}
+h1 {
+  font-size:45px;
+  text-align:center;
+  border-bottom:1px solid gray;
+  margin:0;
+  padding:20px;
+}
+ol {
+  border-right:1px solid gray;
+  width:100px;
+  margin:0;
+  padding:20px;
+  line-height:1.8em;
+  font-weight:bold;
+
+}
+/** 좌우 분할 : 좌측 150px 고정, 우측 나머지 전체 프레임 사용 **/
+#grid{
+  display:grid;
+  grid-template-columns: 150px 1fr;
+}
+#grid ol {
+  padding-left:33px;
+}
+#grid #article{
+  padding-left:25px;
+}
+/**반응형 디자인 : 800px 이하가 되면 좌우 분할이 사라짐**/
+@media(max-width:400px){
+  #grid{
+    display:block;
+  }
+  ol{
+    border-right:none;
+  }
+  h1 {
+    border-bottom:none;
+  }
+}
